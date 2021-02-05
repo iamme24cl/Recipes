@@ -6,6 +6,6 @@ class Recipe < ApplicationRecord
 	has_many :ingredients, through: :recipe_ingredients
 
 	validates :title, presence: true
-	validates :cooktime, presence: true
+	validates :cook_time, presence: true
 	validates :instructions, presence: true
 end
