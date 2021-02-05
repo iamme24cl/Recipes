@@ -46,6 +46,7 @@ Sprint 1 - Database, Models and Resources
 		- define associations
 		- define validations
 	Generate Controllers and views as you go 
+## Done...
 
 Sprint 2 - User
 	Sign up User
@@ -53,6 +54,7 @@ Sprint 2 - User
 	Display User profile
 	Log in and Log out User
 		- use helper methods in ApplicationController
+### Done...
 
 Sprint 3 - Recipes & Ingredients
 	Create/Edit Recipe
