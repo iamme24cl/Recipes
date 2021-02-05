@@ -13,6 +13,8 @@ gem 'puma', '~> 5.0'
 gem 'sass-rails', '>= 6'
 # import bootstrap to use with assetpipeline
 gem 'bootstrap-sass', '~> 3.4.1'
+# install jquery for front end
+gem 'jquery-rails'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem 'webpacker', '~> 5.0'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
