@@ -1,7 +1,7 @@
 ## Recipe Manager
 
 # User
-	username
+	name
 	email
 	password_digest
 	has many recipes
@@ -37,7 +37,35 @@
 	title
 	content
 
-	
+TODO - 
+
+Sprint 1 - Database, Models and Resources
+	Create and run migrations
+	Define necessary routes
+	Generate models
+		- define associations
+		- define validations
+	Generate Controllers and views as you go 
+
+Sprint 2 - User
+	Sign up User
+		- validations and has_secure_password
+	Display User profile
+	Log in and Log out User
+		- use helper methods in ApplicationController
+
+Sprint 3 - Recipes & Ingredients
+	Create/Edit Recipe
+		- Create/edit ingredient with nested form within a recipe
+	Display Recipes within diffrent scopes using class level scope method
+	Use a class level URL method - 'recipes/top_rated' may be???
+
+Sprint 4 - Reviews
+Sprint 5 - Omniauth Authentication
+	Implement authentication using Google, Facebook and Github
+Sprint 6 - Layout Adjustments
+	Use Active Storage for images
+Sprint 7 - Refactor Code
 
 
 
