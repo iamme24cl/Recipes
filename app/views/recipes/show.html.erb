@@ -5,6 +5,11 @@
 
 <h3>Instructions</h3>
 <p><%= @recipe.instructions %></p>
+<ul>
+	<% @recipe.recipe_ingredients.each do |i| %>
+		<li><%= i.quantity %> - <%= i.ingredient.name %></li>
+	<% end %>
+</ul>
 
 
 <%= link_to "Add Ingredients", new_recipe_recipe_ingredient_path(@recipe), class: "btn btn-primary" %>
