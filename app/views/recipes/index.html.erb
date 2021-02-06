@@ -1,0 +1,9 @@
+<h1>All Recipes</h1>
+
+<ul>
+	<% @recipes.each do |recipe| %>
+		<li>
+			<h3><%=link_to recipe.title, recipe_path(recipe) %> <small>Ready in - <%= recipe.cook_time %></small></h3>			
+		</li>
+	<% end %>
+</ul>
