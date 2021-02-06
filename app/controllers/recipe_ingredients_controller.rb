@@ -26,10 +26,18 @@ class RecipeIngredientsController < ApplicationController
 	def update
 		@recipe_ingredient = RecipeIngredient.find_by(id: params[:id])
 		if @recipe_ingredient.update(recipe_ingredient_params)
+			flash[:message] = "Successfully updated Recipe"
 			redirect_to recipe_path(@recipe_ingredient.recipe)
 		else
 			render :edit
 		end
+	end
+
+	def destroy
+		@recipe_ingredient = RecipeIngredient.find_by(id: params[:id])
+		@recipe_ingredient.delete
+
+		redirect_to recipe_path(@recipe_ingredient.recipe)
 	end
 
 	private

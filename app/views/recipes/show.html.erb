@@ -2,16 +2,18 @@
 
 <p><b>Cook time: </b><%= @recipe.cook_time %></p>
 
-
-<h3>Instructions</h3>
-<p><%= @recipe.instructions %></p>
-<ul>
-	<% @recipe.recipe_ingredients.each do |i| %>
-		<li><%= i.quantity %> - <%= link_to i.ingredient.name, edit_recipe_ingredient_path(i) %></li>
-	<% end %>
-</ul>
+<div>
+	<h3>Instructions</h3>
+	<p><%= @recipe.instructions %></p>
+	<ul>
+		<% @recipe.recipe_ingredients.each do |i| %>
+			<li>Quantity: <%= i.quantity %> - Ingredient: <%= i.ingredient.name %> <%= link_to "Edit", edit_recipe_ingredient_path(i) %> <%= link_to "Delete", recipe_ingredient_path(i), data: {:confirm => 'Are you sure?'}, :method => :delete %></li>
+		<% end %>
+	</ul>
+</div>
 
 
 <%= link_to "Add Ingredients", new_recipe_recipe_ingredient_path(@recipe), class: "btn btn-primary" %>
 
-<%= link_to "Edit Ingredients", edit_recipe_ingredient_path, class: "btn btn-primary" %>
+<%= link_to "Edit Recipe", edit_recipe_path(@recipe), class: "btn btn-primary" %>
+
