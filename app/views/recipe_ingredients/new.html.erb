@@ -14,7 +14,7 @@
       <%= f.label :ingredient_id, "Select an ingredient  " %>
       <%= f.collection_select :ingredient_id, Ingredient.all, :id, :name, include_blank: true %>
     
-      <%= f.fields_for :ingredient, Ingredient.new do |i| %>
+      <%= f.fields_for :ingredient do |i| %>
         <%= i.label :name, "Or create a new one:  " %>
         <%= i.text_field :name %>
       <% end %>
