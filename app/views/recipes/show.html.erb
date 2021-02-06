@@ -7,9 +7,11 @@
 <p><%= @recipe.instructions %></p>
 <ul>
 	<% @recipe.recipe_ingredients.each do |i| %>
-		<li><%= i.quantity %> - <%= i.ingredient.name %></li>
+		<li><%= i.quantity %> - <%= link_to i.ingredient.name, edit_recipe_ingredient_path(i) %></li>
 	<% end %>
 </ul>
 
 
 <%= link_to "Add Ingredients", new_recipe_recipe_ingredient_path(@recipe), class: "btn btn-primary" %>
+
+<%= link_to "Edit Ingredients", edit_recipe_ingredient_path, class: "btn btn-primary" %>

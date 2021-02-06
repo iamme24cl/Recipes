@@ -1,32 +1,5 @@
-<%= render partial: 'layouts/errors', locals: {object: @recipe_ingredient} %>
+<h1>Add Ingredients to your recipe</h1>
 
-	<%= form_for @recipe_ingredient do |f|%>
-    <% if @recipe %>
-      <%= f.hidden_field :recipe_id %>
-    <% else %>
-      <div class="form-group">
-        <%= f.label :recipe_id, "Select a Recipe" %>
-        <%= f.collection_select :recipe_id, Recipe.all, :id, :title, include_blank: true %>
-      </div>
-    <% end %>
-    
-    <div class="form-group">
-      <%= f.label :ingredient_id, "Select an ingredient  " %>
-      <%= f.collection_select :ingredient_id, Ingredient.all, :id, :name, include_blank: true %>
-    
-      <%= f.fields_for :ingredient do |i| %>
-        <%= i.label :name, "Or create a new one:  " %>
-        <%= i.text_field :name %>
-      <% end %>
-    </div>
-      <div class="form-group">
-        <%= f.label :quantity %>
-        <%= f.text_field :quantity %>
-      </div>
-    <br>
-
-	<%= f.submit class: "btn btn-primary" %>
-
-<% end %>
+<%= render 'form' %>
 
 
