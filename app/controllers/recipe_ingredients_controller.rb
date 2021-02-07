@@ -13,7 +13,8 @@ class RecipeIngredientsController < ApplicationController
 		@recipe_ingredient = RecipeIngredient.new(recipe_ingredient_params)	
 		# binding.pry
 		if @recipe_ingredient.save
-			redirect_to recipe_path(@recipe_ingredient.recipe)
+			flash[:message] = "Sucessfully added ingredient! Add more or GO BACK!"
+			redirect_to new_recipe_recipe_ingredient_path(@recipe_ingredient.recipe)
 		else
 			render :new
 		end
