@@ -104,9 +104,19 @@
   }
 
   .btn {
-    margin: 15px 10px 0 0;
+    margin: 15px 15px 0 0;
   }
- 
+
+  img {
+  -webkit-transition: all .3s ease-out;
+  -moz-transition: all .3s ease-out;
+  -o-transition: all .3s ease-out;
+  transition: all .3s ease-out;
+  &:hover {
+    transform: scale(1.075);
+    }
+  }
+
 }
 
 @media screen and (max-width: 600px) {

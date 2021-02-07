@@ -1,6 +1,6 @@
 
 <% if @recipe.image.attached? %>
-	<%= image_tag url_for(@recipe.image) %>
+	<%= image_tag url_for(@recipe.image), class: "img-responsive img-rounded" %>
 <% end %>
 
 <h4>Title: <%= @recipe.title %></h4>
@@ -45,7 +45,7 @@
 
 
 <%= link_to "Add Ingredients", new_recipe_recipe_ingredient_path(@recipe), class: "btn btn-primary" %>
-<br>
+
 <%= link_to "Edit Recipe", edit_recipe_path(@recipe), class: "btn btn-primary" %>
 <%= link_to "Delete Recipe", recipe_path(@recipe), data: {:confirm => 'Are you sure?'}, class: "btn btn-primary", method: :delete %>
 
