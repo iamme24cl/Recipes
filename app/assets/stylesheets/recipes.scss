@@ -99,6 +99,11 @@
     color: green;
   }
 
+  .edit-ingredient, .btn {
+    margin-left: 5px;
+  }
+
+ 
 }
 
 @media screen and (max-width: 600px) {
@@ -130,6 +135,5 @@
     font-size: 18px;
     line-height: 24px;
   }
-
 
 }
