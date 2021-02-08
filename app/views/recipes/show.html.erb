@@ -1,51 +1,84 @@
+<div class="main-content">
+	<div class="row">
+		<div class="col-md-4">
+			<% if @recipe.image.attached? %>
+				<%= image_tag url_for(@recipe.image), class: "img-responsive img-rounded" %>
+			<% end %>
+		</div>
 
-<% if @recipe.image.attached? %>
-	<%= image_tag url_for(@recipe.image), class: "img-responsive img-rounded" %>
-<% end %>
+		<div class="col-md-8">
+			<div>
+				<h1>Title: <%= @recipe.title %></h1>
+				<p><b>Cook time: </b><%= @recipe.cook_time %></p>
+				<h3>Instructions</h3>
+				<p><%= @recipe.instructions %></p>
+			</div>
+		</div>
+	</div>
 
-<h4>Title: <%= @recipe.title %></h4>
+	<div class="row">
+		<div class="col-md-12">
+			<% @recipe.recipe_ingredients.each do |i| %>
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>Quantity</th>
+							<th>Ingredient</th>
 
-<p><b>Cook time: </b><%= @recipe.cook_time %></p>
+							<% if @recipe.user == current_user %>
+								<th>Edit Ingredient</th>
+							<% end %>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><%= i.quantity %></td>
+							<td><%= i.ingredient.name %></td>
+						<% if @recipe.user == current_user %>
+							<td>
+								<span class="edit-ingredient"><%= link_to "Edit", edit_recipe_ingredient_path(i) %></span>	 
+								<span class="edit-ingredient"><%= link_to "Delete", recipe_ingredient_path(i), data: {:confirm => 'Are you sure?'}, :method => :delete %></span>			
+							</td>					
+						<% end %>	
+						</tr>
+					</tbody>
+					
+				</table>		
+			<% end %>
+		</div>			
+	</div>
+
+	<div class="row">
+		<div class="col-md-12">
+			<%= link_to "Add Ingredients", new_recipe_recipe_ingredient_path(@recipe), class: "btn btn-primary" %>
+
+			<%= link_to "Edit Recipe", edit_recipe_path(@recipe), class: "btn btn-primary" %>
+			<%= link_to "Delete Recipe", recipe_path(@recipe), data: {:confirm => 'Are you sure?'}, class: "btn btn-primary", method: :delete %>
+		</div>
+	</div>
+	
+</div>
 
 
-<h3>Instructions</h3>
-<p><%= @recipe.instructions %></p>
+
+
+
+
+
+
+
+
+
+
+
+
 	
 
-	<% @recipe.recipe_ingredients.each do |i| %>
-		<table class="table table-striped">
-			<thead>
-				<tr>
-					<th>Quantity</th>
-					<th>Ingredient</th>
-
-					<% if @recipe.user == current_user %>
-						<th>Edit Ingredient</th>
-					<% end %>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td><%= i.quantity %></td>
-					<td><%= i.ingredient.name %></td>
-				<% if @recipe.user == current_user %>
-					<td>
-						<span class="edit-ingredient"><%= link_to "Edit", edit_recipe_ingredient_path(i) %></span>	 
-						<span class="edit-ingredient"><%= link_to "Delete", recipe_ingredient_path(i), data: {:confirm => 'Are you sure?'}, :method => :delete %></span>			
-					</td>					
-				<% end %>	
-				</tr>
-			</tbody>
-			
-		</table>		
-	<% end %>
 
 
 
 
 
-<%= link_to "Add Ingredients", new_recipe_recipe_ingredient_path(@recipe), class: "btn btn-primary" %>
 
-<%= link_to "Edit Recipe", edit_recipe_path(@recipe), class: "btn btn-primary" %>
-<%= link_to "Delete Recipe", recipe_path(@recipe), data: {:confirm => 'Are you sure?'}, class: "btn btn-primary", method: :delete %>
+
 

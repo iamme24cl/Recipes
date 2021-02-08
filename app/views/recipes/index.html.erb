@@ -1,18 +1,19 @@
-<h1>All Recipes</h1>
 
 
 
 <div class="row">
-<% @recipes.each do |recipe| %>
+	<% @recipes.each do |recipe| %>
 
-	<div class="col-md-4">
-		<% if recipe.image.attached? %>
-			<%= image_tag url_for(recipe.image) %>
-		<% end %>
-		<div class="image-title">
-			<h3><%=link_to recipe.title, recipe_path(recipe.id) %> <small>Ready in - <%= recipe.cook_time %></small></h3>	
-		</div>			
-	</div>	
-	
-<% end %>
+		<div class="col-md-4">
+			<% if recipe.image.attached? %>
+				<a href="<%= recipe_path(recipe) %>"><%= image_tag url_for(recipe.image), class: "img-responsive img-rounded" %></a>				
+			<% end %>
+
+			<div class="image-title">
+				<h3><%=link_to recipe.title, recipe_path(recipe.id) %> <small>Ready in - <%= recipe.cook_time %></small></h3>	
+			</div>			
+		</div>	
+		
+	<% end %>
 </div>
+
