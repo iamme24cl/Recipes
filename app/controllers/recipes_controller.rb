@@ -38,6 +38,7 @@ class RecipesController < ApplicationController
 	end
 
 	def destroy
+		# @recipe.recipe_ingredients.delete_all
 		@recipe.delete
 
 		redirect_to recipes_path
