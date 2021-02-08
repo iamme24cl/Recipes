@@ -1,0 +1,17 @@
+<%= display_heading(@recipe) %>
+
+<div class="row">
+	<div class="col-md-12">
+			<% @reviews.each do |review| %>
+				<h3><%= review.title %> <small><b><%= review.stars %> Stars</b></small></h3>
+				<div class="review-content">
+					<p><%= review.content %></p>
+					<small class="review-user">By - <%= review.user.name %></small>
+					<br>
+					<% if review.user == current_user %>
+						<%= link_to "Edit Review", edit_review_path(review), class: "edit-review" %>
+					<% end %>
+				</div>						
+			<% end %>
+		</div>
+</div>
