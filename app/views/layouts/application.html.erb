@@ -12,16 +12,16 @@
 
   <body>
 
-    <%= render 'layouts/navbar' %>
+    <%= render partial: 'layouts/navbar' %>
 
     <div class="wrapper">
 
       <% if flash[:error] %>
-        <em class="error"><%= flash[:error] %></em>
+        <p class="error"><%= flash[:error] %></p>
       <% end %>
 
       <% if flash[:message] %>
-        <em class="message"><%= flash[:message] %></em>
+        <p class="message"><%= flash[:message] %></p>
       <% end %>
 
       <div class="container">
