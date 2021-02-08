@@ -11,5 +11,13 @@ class Recipe < ApplicationRecord
 	validates :cook_time, presence: true
 	validates :instructions, presence: true
 
+	def avg_rating
+		stars = []
+		self.reviews.each do |review|
+			stars << review.stars
+		end
+		avg_stars = stars.sum(0.0) / stars.size
+	end
+
 end
   
