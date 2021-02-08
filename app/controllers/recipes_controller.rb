@@ -3,6 +3,7 @@ class RecipesController < ApplicationController
 
 	def index
 		@recipes = Recipe.all
+		render layout: 'recipes_index'
 	end
 
 	def show
