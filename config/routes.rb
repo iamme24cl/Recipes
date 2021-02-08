@@ -6,14 +6,14 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
 
-  resources :reviews
-  resources :ingredients
+  resources :reviews, except: [:destroy]
   resources :recipe_ingredients
   resources :recipes do
     resources :recipe_ingredients, only: [:new, :index]
     resources :reviews, only: [:new, :index]
   end
-  resources :users
+  resources :users, except: [:destroy]
+  
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   
 end

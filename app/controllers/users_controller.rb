@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-	before_action :set_user
+	before_action :find_user
 	skip_before_action :verify_user, only: [:new, :create]
 
 	def index
@@ -42,7 +42,7 @@ class UsersController < ApplicationController
 		params.require(:user).permit(:name, :email, :password)
 	end
 
-	def set_user
+	def find_user
 		@user = User.find_by(id: params[:id])
 	end
 
