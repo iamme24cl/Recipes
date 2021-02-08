@@ -37,4 +37,11 @@
   .image-title {
     text-align: center;
   }
+
+  .instructions, .review-content {
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+  }
+
 }

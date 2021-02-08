@@ -8,10 +8,12 @@
 
 		<div class="col-md-8">
 			<div>
-				<h1>Title: <%= @recipe.title %></h1>
+				<h2><%= @recipe.title %></h2>
 				<p><b>Cook time: </b><%= @recipe.cook_time %></p>
 				<h3>Instructions</h3>
-				<p><%= @recipe.instructions %></p>
+				<div class="instructions">
+					<p><%= @recipe.instructions %></p>
+				</div>				
 			</div>
 		</div>
 	</div>
@@ -54,6 +56,23 @@
 
 			<%= link_to "Edit Recipe", edit_recipe_path(@recipe), class: "btn btn-primary" %>
 			<%= link_to "Delete Recipe", recipe_path(@recipe), data: {:confirm => 'Are you sure?'}, class: "btn btn-primary", method: :delete %>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-12">
+			<h2>Reviews</h2>
+			<%= link_to "Add a Review", new_recipe_review_path(@recipe), class: "btn btn-success" %>
+		</div>
+
+		<div class="col-md-12">
+			<% @recipe.reviews.each do |review| %>
+				<h3><%= review.title %> <small><b><%= review.stars %> Stars</b></small></h3>
+				<div class="review-content">
+					<p><%= review.content %></p>
+					<small>By - <%= review.user.name %></small>	
+				</div>						
+			<% end %>
 		</div>
 	</div>
 	

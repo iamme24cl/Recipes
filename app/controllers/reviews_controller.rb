@@ -24,6 +24,7 @@ class ReviewsController < ApplicationController
 	def create
 		@review = current_user.reviews.build(review_params)
 		if @review.save
+			flash[:message] = "Review Added"
 			redirect_to recipe_path(@review.recipe)
 		else
 			render :new
