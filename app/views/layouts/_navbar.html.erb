@@ -15,6 +15,7 @@
       <% if current_user %>
         <ul class="nav navbar-nav">
           <li><%= link_to "All Recipes", recipes_path %></li>
+          <li><%= link_to "Top Rated Recipes", recipes_top_rated_path %></li>
           <li><%= link_to "Add a Recipe", new_recipe_path %></li>
           <li><%= link_to "Reviews", reviews_path %></li>         
           <li><%= link_to "Add a Review", new_review_path %></li>

@@ -6,9 +6,9 @@ class RecipesController < ApplicationController
 		render layout: 'recipes_index'
 	end
 
-	def top_trending
-		@recipes = Recipe.top_trending
-		render :index 
+	def top_rated
+		@recipes = Recipe.top_rated	
+		render layout: 'recipes_index'	
 	end
 
 	def show

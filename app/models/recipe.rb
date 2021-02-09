@@ -12,11 +12,7 @@ class Recipe < ApplicationRecord
 	validate :is_title_case
 	before_validation :make_title_case
 
-
-
-	def self.top_trending
-		
-	end
+	scope :top_rated, -> {left_joins(:reviews).group(:id).order('avg(stars) desc').limit(8)}
 
 	def avg_rating
 		stars = []

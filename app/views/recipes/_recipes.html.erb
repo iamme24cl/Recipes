@@ -1,0 +1,25 @@
+
+<div class="row">
+	<% @recipes.each do |recipe| %>
+
+		<div class="col-md-4">
+			<% if recipe.image.attached? %>
+				<a href="<%= recipe_path(recipe) %>"><%= image_tag url_for(recipe.image), class: "img-responsive img-rounded" %></a>		
+			<% end %>
+
+			<div class="image-title">
+				<h3><%=link_to recipe.title, recipe_path(recipe.id) %> 
+				
+				<% if recipe.reviews.exists? %>
+					<small class="recipe-title-content"><%= recipe.avg_rating %> Stars </small>
+				<% end %>					
+				</h3>
+							
+				<small class="recipe-title-content"><b>Submitted by:</b> <%= recipe.user.name %> <%= submitted_on recipe %></small>	
+				<p><small class="recipe-title-content"><b>Ready in</b> - <%= recipe.cook_time %></small></p>
+			</div>			
+		</div>	
+		
+	<% end %>
+</div>
+

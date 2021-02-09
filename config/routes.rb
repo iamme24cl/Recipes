@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
 
-  get '/recipes/top_trending' => 'recipes#top_trending'
+  get '/recipes/top_rated' => 'recipes#top_rated'
 
   resources :reviews, except: [:destroy]
   resources :recipe_ingredients

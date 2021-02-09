@@ -6,7 +6,9 @@
 			<% end %>
 			<small class="recipe-title-content"><b>Submitted by:</b> <%= @recipe.user.name %> <%= submitted_on @recipe %></small>	
 			<br>
-			<small class="recipe-title-content"><%= @recipe.avg_rating %> Stars </small>
+			<% if @recipe.reviews.exists? %>
+					<small class="recipe-title-content"><%= @recipe.avg_rating %> Stars </small>
+			<% end %>		
 		</div>
 
 		<div class="col-md-8">
