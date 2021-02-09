@@ -12,6 +12,9 @@ class Recipe < ApplicationRecord
 
 
 
+	def self.top_trending
+		
+	end
 
 	def avg_rating
 		stars = []

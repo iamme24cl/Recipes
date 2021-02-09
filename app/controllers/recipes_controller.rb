@@ -6,6 +6,11 @@ class RecipesController < ApplicationController
 		render layout: 'recipes_index'
 	end
 
+	def top_trending
+		@recipes = Recipe.top_trending
+		render :index 
+	end
+
 	def show
 	end
 
