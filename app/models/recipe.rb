@@ -6,10 +6,12 @@ class Recipe < ApplicationRecord
 	has_many :ingredients, through: :recipe_ingredients
 	has_one_attached :image
 
-
 	validates :title, presence: true
 	validates :cook_time, presence: true
 	validates :instructions, presence: true
+
+
+
 
 	def avg_rating
 		stars = []
@@ -18,6 +20,5 @@ class Recipe < ApplicationRecord
 		end
 		avg_stars = stars.sum(0.0) / stars.size
 	end
-
 end
   

@@ -63,10 +63,14 @@ Sprint 3 - Recipes & Ingredients
 	Use a class level URL method - 'recipes/top_rated' may be???
 
 Sprint 4 - Reviews
+### Done
+
 Sprint 5 - Omniauth Authentication
 	Implement authentication using Google, Facebook and Github
 Sprint 6 - Layout Adjustments
 	Use Active Storage for images
+### Done
+
 Sprint 7 - Refactor Code
 
 
