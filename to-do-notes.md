@@ -75,7 +75,10 @@ Sprint 7 - Refactor Code
 
 
 ### Next Steps -
-define a top_rated method for recipes
+Filters -
+	by Ingredient
+	by User
+	
 
 
 
