@@ -2,8 +2,15 @@ class RecipesController < ApplicationController
 	before_action :find_recipe, only: [:show, :edit, :update, :destroy]
 
 	def index
-		@recipes = Recipe.all
-		render layout: 'recipes_index'
+		if !params[:user].blank?
+			@recipes = Recipe.by_user(params[:user])
+		elsif 
+			!params[:ingredient].blank?
+			@recipes = Recipe.by_ingredient(params[:ingredient])
+		else
+			@recipes = Recipe.all
+			render layout: 'recipes_index'
+		end
 	end
 
 	def top_rated

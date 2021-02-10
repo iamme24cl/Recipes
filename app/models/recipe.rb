@@ -14,6 +14,15 @@ class Recipe < ApplicationRecord
 
 	scope :top_rated, -> {left_joins(:reviews).group(:id).order('avg(stars) desc').limit(8)}
 
+	def self.by_user(user_id)
+    where(user: user_id)
+  end
+
+	def self.by_ingredient(ingredient)
+		ingredient = Ingredient.find_by(ingredient)
+		ingredient.recipes
+	end
+
 	def avg_rating
 		stars = []
 		self.reviews.each do |review|

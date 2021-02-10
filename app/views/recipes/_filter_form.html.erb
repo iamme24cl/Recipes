@@ -10,6 +10,11 @@
 				<%= label_tag :ingredient %>
 				<%= select_tag :ingredient, options_from_collection_for_select(Ingredient.all, :id, :name), include_blank: true, class: "form-control" %>
 		</div>
+
+		<div class="col-md-2 form-group">
+			<%= submit_tag "Filter", class: "btn btn-primary filter-btn" %>				
+		</div>
+
   <% end %>
 </div>
 
