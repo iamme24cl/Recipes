@@ -29,6 +29,7 @@ gem 'bcrypt', '~> 3.1.7'
 # gems for omniauth authentication
 gem 'omniauth', '~> 1'
 gem 'omniauth-google-oauth2'
+gem 'omniauth-facebook'
 
 # to use .env file
 gem 'dotenv-rails'
