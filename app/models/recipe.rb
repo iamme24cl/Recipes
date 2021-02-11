@@ -12,11 +12,12 @@ class Recipe < ApplicationRecord
 	validate :is_title_case
 	before_validation :make_title_case
 
-	scope :top_rated, -> {left_joins(:reviews).group(:id).order('avg(stars) desc').limit(8)}
+	scope :top_rated, -> { left_joins(:reviews).group(:id).order('avg(stars) desc').limit(8) }
+	scope :by_user, ->(user_id) { where(user: user_id) }
 
-	def self.by_user(user_id)
-    where(user: user_id)
-  end
+	# def self.by_user(user_id)
+  #   where(user: user_id)
+  # end
 
 	def self.by_ingredient(ingredient_id)
 		# ingredient = Ingredient.find_by(id: ingredient_id) 
