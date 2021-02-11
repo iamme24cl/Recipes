@@ -8,9 +8,9 @@ module ReviewsHelper
 		end
 	end
 
-	def go_back(object)
-		if object
-			link_to "Back", recipe_path(object), class: "btn btn-primary"
+	def go_back(recipe)
+		if recipe
+			link_to "Back", recipe_path(recipe), class: "btn btn-primary"
 		else
 			link_to "Back", recipes_path, class: "btn btn-primary"
 		end
