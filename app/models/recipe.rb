@@ -18,9 +18,9 @@ class Recipe < ApplicationRecord
     where(user: user_id)
   end
 
-	def self.by_ingredient(ingredient)
-		ingredient = Ingredient.find_by(ingredient)
-		ingredient.recipes
+	def self.by_ingredient(ingredient_id)
+		ingredient = Ingredient.find_by(id: ingredient_id) 
+		ingredient.recipes	
 	end
 
 	def avg_rating

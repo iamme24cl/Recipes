@@ -5,3 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+ingredients = ['chicken', 'salmon', 'steak', 'onions', 'salt', 'pepper', 'tomatoes', 'oil', 'water', 'rice', 'pasta']
+
+
+def create_ingredients(ingredients)
+  ingredients.each do |i|
+    Ingredient.create(name: i)
+  end
+end
+
+create_ingredients(ingredients)
+
