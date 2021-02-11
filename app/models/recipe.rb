@@ -28,7 +28,11 @@ class Recipe < ApplicationRecord
 		self.reviews.each do |review|
 			stars << review.stars
 		end
-		avg_stars = stars.sum(0.0) / stars.size
+		avg_stars = (stars.sum(0.0) / stars.size).to_i
+	end
+
+	def empty_stars
+		5 - avg_rating
 	end
 
 	private

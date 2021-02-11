@@ -4,17 +4,16 @@
 			<% if @recipe.image.attached? %>
 				<%= image_tag url_for(@recipe.image), class: "img-responsive img-rounded" %>
 			<% end %>
-			<small class="recipe-title-content"><b>Submitted by:</b> <%= @recipe.user.name %> <%= submitted_on @recipe %></small>	
-			<br>
-			<% if @recipe.reviews.exists? %>
-					<small class="recipe-title-content"><%= @recipe.avg_rating %> Stars </small>
-			<% end %>		
+			<small class="recipe-title-content"><b>Submitted by:</b> <%= @recipe.user.name %> <%= submitted_on @recipe %></small>				
 		</div>
 
 		<div class="col-md-8">
 			<div>
 				<h2><%= @recipe.title %> </h2>
+				<%= render partial: 'display_rating', locals: {recipe: @recipe} %>
+
 				<p><small><b>Cook time: </b><%= @recipe.cook_time %></small></p>
+
 				<h3>Instructions</h3>
 				<div class="instructions">
 					<p><%= @recipe.instructions %></p>
@@ -55,6 +54,7 @@
 		</div>			
 	</div>
 
+
 	<div class="row">
 		<div class="col-md-12">
 			
@@ -63,18 +63,8 @@
 			<%= link_to "See all Reviews", recipe_reviews_path(@recipe), class: "btn btn-success" %>
 		</div>		
 	</div>
-
-		<% if @recipe.user == current_user %>
-				<div class="row">
-					<div class="col-md-12">
-						<h2>Edit Your Recipe</h2>
-						<%= link_to "Add Ingredients", new_recipe_recipe_ingredient_path(@recipe), class: "btn btn-primary" %>
-
-						<%= link_to "Edit Recipe", edit_recipe_path(@recipe), class: "btn btn-primary" %>
-						<%= link_to "Delete Recipe", recipe_path(@recipe), data: {:confirm => 'Are you sure?'}, class: "btn btn-primary", method: :delete %>
-					</div>
-				</div>
-		<% end %>
+	
+	<%= render 'edit_recipe_buttons' %>
 	
 </div>
 

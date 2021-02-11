@@ -61,6 +61,7 @@ Sprint 3 - Recipes & Ingredients
 		- Create/edit ingredient with nested form within a recipe
 	Display Recipes within diffrent scopes using class level scope method
 	Use a class level URL method - 'recipes/top_rated' may be???
+### Done
 
 Sprint 4 - Reviews
 ### Done
@@ -81,6 +82,17 @@ Filters -
 ### Next Steps
 	Sprint 5 - Omniauth Authentication
 	Implement authentication using Google, Facebook and Github
+### Done
+
+### Next Steps
+Work on the homepage
+	remove wrapper from layout
+	add a jumbotron image for the homepage
+
+gather images and recipes for demo
+
+create seed data for demo
+
 
 
 

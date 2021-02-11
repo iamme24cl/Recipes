@@ -9,13 +9,13 @@ class RecipesController < ApplicationController
 			@recipes = Recipe.by_ingredient(params[:ingredient])
 		else
 			@recipes = Recipe.all
-			render layout: 'recipes_index'
 		end
+		render layout: 'recipes_index'
 	end
 
 	def top_rated
 		@recipes = Recipe.top_rated	
-		render layout: 'recipes_index'	
+		render :index, layout: 'recipes_index'	
 	end
 
 	def show
