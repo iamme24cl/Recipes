@@ -88,6 +88,7 @@ Filters -
 Work on the homepage
 	remove wrapper from layout
 	add a jumbotron image for the homepage
+### Done
 
 gather images and recipes for demo
 
