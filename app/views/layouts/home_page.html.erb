@@ -12,20 +12,24 @@
   </head>
 
   <body>
-
-    <%= render partial: 'layouts/navbar' %>   
-
-    <% if flash[:error] %>
-      <p class="error"><%= flash[:error] %></p>
-    <% end %>
-
-    <% if flash[:message] %>
-      <p class="message"><%= flash[:message] %></p>
-    <% end %>
+    <%= render partial: 'layouts/navbar' %>  
+     
+    <div class="container">
     
 
-    <%= yield %>
-    
+      <% if flash[:error] %>
+        <p class="error"><%= flash[:error] %></p>
+      <% end %>
+
+      <% if flash[:message] %>
+        <p class="message"><%= flash[:message] %></p>
+      <% end %>
+      
+
+      <%= yield %>
+
+
+   </div> 
 
  
 
