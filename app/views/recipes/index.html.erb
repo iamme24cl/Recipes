@@ -6,7 +6,7 @@
 
 		<div class="col-md-4">
 			<% if recipe.image.attached? %>
-				<a href="<%= recipe_path(recipe) %>"><%= image_tag url_for(recipe.image), class: "img-responsive img-rounded" %></a>		
+				<a href="<%= recipe_path(recipe) %>"><%= image_tag url_for(recipe.image), class: "img-responsive img-rounded recipe-image" %></a>		
 			<% end %>
 
 			<div class="image-title">

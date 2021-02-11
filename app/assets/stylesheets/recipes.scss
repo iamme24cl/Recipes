@@ -32,7 +32,7 @@
     margin: 15px 15px 0 0;
   }
 
-  img {
+  img.recipe-image {
   -webkit-transition: all .3s ease-out;
   -moz-transition: all .3s ease-out;
   -o-transition: all .3s ease-out;
@@ -40,6 +40,15 @@
   &:hover {
     transform: scale(1.075);
     }  
+  }
+
+  img.home-page {
+    width: 800px;
+    border-radius: 10px;
+  }
+  
+  .home-page {
+    margin: auto;    
   }
 
   .image-title {
