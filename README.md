@@ -6,7 +6,7 @@
     - run `bundle install` to install the dependencies
     - `rake db:migrate` to run migrations
     - `rails s` to start the server
-    - visit port localhost:3000 on your choice of browser to use the application
+    - visit port `localhost:3000` on your choice of browser to use the application
 
 * Demo Video
 [![Walkthrough video]](https://youtu.be/i3Q8Ns4z11o)
