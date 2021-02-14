@@ -2,7 +2,7 @@
 * Ruby version '2.6.1'
 
 * Installation
-  # git clone this repo => "git@github.com:iamme24cl/Recipes.git" and cd into it.
+   git clone this repo => "git@github.com:iamme24cl/Recipes.git" and cd into it.
     - run `bundle install` to install the dependencies
     - `rake db:migrate` to run migrations
     - `rails s` to start the server
