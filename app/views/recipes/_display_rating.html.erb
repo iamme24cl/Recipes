@@ -9,6 +9,8 @@
     <% end %>
 
     <span class="reviews-count"><%= pluralize(recipe.reviews.count, "review") %></span>
+  <% else %>
+    <span class="reviews-count"><%= pluralize(recipe.reviews.count, "review") %></span>
   <% end %>	
 </div>
 
