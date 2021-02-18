@@ -10,7 +10,6 @@ class RecipesController < ApplicationController
 		else
 			@recipes = Recipe.all
 		end
-		# render layout: 'recipes_index'
 	end
 
 	def top_rated
