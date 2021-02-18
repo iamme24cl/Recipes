@@ -3,13 +3,14 @@
 <div class="row">
 	<div class="col-md-12">
 			<% @reviews.each do |review| %>
-				<h3 class="review-title"><%= review.title %></h3>
+				<h3 class="review-title"><%= review.title %>
 					<% review.stars.times do %>
-						<span class="glyphicon glyphicon-star"></span>
-					<% end %>					
+						<small><span class="glyphicon glyphicon-star"></span></small>						
+					<% end %>
+				</h3>
+					<div><small class="review-user"><%= review.recipe.title %> by - <%= review.user.name %></small></div>					
 				<div class="review-content">
-					<p><%= review.content %></p>
-					<small class="review-user">By - <%= review.user.name %></small>
+					<p><%= review.content %></p>					
 					<br>
 					<% if review.user == current_user %>
 						<%= link_to "Edit Review", edit_review_path(review), class: "edit-review" %>
@@ -19,3 +20,6 @@
 		</div>
 </div>
 
+<% if @recipe %>
+	<%= go_back(@recipe) %>
+<% end %>

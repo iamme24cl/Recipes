@@ -29,3 +29,6 @@
 	<%= f.submit class: "btn btn-primary" %>
 <% end %>
 
+<% if @recipe %>
+	<%= go_back(@recipe) %>
+<% end %>
