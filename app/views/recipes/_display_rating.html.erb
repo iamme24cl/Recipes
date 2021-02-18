@@ -1,5 +1,6 @@
 <div>
-  <% if recipe.reviews.exists? %>		
+  <% if recipe.reviews.exists? %>	
+
     <% recipe.avg_rating.times do %>
       <span class="glyphicon glyphicon-star"></span>
     <% end %>
@@ -9,8 +10,11 @@
     <% end %>
 
     <span class="reviews-count"><%= pluralize(recipe.reviews.count, "review") %></span>
+
   <% else %>
+
     <span class="reviews-count"><%= pluralize(recipe.reviews.count, "review") %></span>
+    
   <% end %>	
 </div>
 

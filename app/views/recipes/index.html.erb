@@ -14,9 +14,14 @@
 
 				<%= render partial: 'display_rating', locals: {recipe: recipe} %>
 							
-				<small class="recipe-title-content"><b>Submitted by:</b> <%= recipe.user.name %> <%= submitted_on recipe %></small>	
-				<p><small class="recipe-title-content"><b>Ready in</b> - <%= recipe.cook_time %></small></p>
-			</div>			
+				<small class="recipe-title-content">
+					<b>Submitted by:</b> <%= recipe.user.name %> <%= submitted_on recipe %>
+				</small>	
+				<p>
+					<small class="recipe-title-content"><b>Ready in</b> - <%= recipe.cook_time %></small>				
+				</p>
+			</div>	
+					
 		</div>	
 		
 	<% end %>

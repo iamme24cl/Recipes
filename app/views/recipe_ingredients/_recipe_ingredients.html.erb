@@ -2,6 +2,7 @@
 		<div class="col-md-12">
 			<% recipe.recipe_ingredients.each do |i| %>
 				<table class="table table-striped">
+				
 					<thead>
 						<tr>
 							<th>Quantity</th>
@@ -12,20 +13,28 @@
 							<% end %>
 						</tr>
 					</thead>
+
 					<tbody>
 						<tr>
 							<td><%= i.quantity %></td>
 							<td><%= i.ingredient.name %></td>
-						<% if recipe.user == current_user %>
-							<td>
-								<span class="edit-ingredient"><%= link_to "Edit", edit_recipe_ingredient_path(i) %></span>	 
-								<span class="edit-ingredient"><%= link_to "Delete", recipe_ingredient_path(i), data: {:confirm => 'Are you sure?'}, :method => :delete %></span>			
-							</td>					
-						<% end %>	
+
+							<% if recipe.user == current_user %>
+								<td>
+									<span class="edit-ingredient">
+										<%= link_to "Edit", edit_recipe_ingredient_path(i) %>
+									</span>	
+
+									<span class="edit-ingredient">
+										<%= link_to "Delete", recipe_ingredient_path(i), data: {:confirm => 'Are you sure?'}, :method => :delete %>
+									</span>			
+								</td>					
+							<% end %>	
 						</tr>
-					</tbody>
-					
+					</tbody>	
+
 				</table>		
 			<% end %>
 		</div>			
 	</div>
+</div>

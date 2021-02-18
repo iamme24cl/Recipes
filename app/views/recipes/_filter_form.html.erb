@@ -1,6 +1,8 @@
 <div class="row filter-tags">
 	<h2>Filter Recipes by</h2>
+	
 	<%= form_tag("/recipes", method: "get") do %>
+
 		<div class="col-md-2 form-group">
 				<%= label_tag :user, "Member Name" %>
 				<%= select_tag :user, options_from_collection_for_select(User.all, :id, :name), include_blank: true, class: "form-control" %>
