@@ -1,58 +1,12 @@
 <div class="main-content">
-	<div class="row">
-		<div class="col-md-4">
-			<% if @recipe.image.attached? %>
-				<%= image_tag url_for(@recipe.image), class: "img-responsive img-rounded" %>
-			<% end %>
-			<small class="recipe-title-content"><b>Submitted by:</b> <%= @recipe.user.name %> <%= submitted_on @recipe %></small>				
-		</div>
-
-		<div class="col-md-8">
-			<div>
-				<h2><%= @recipe.title %> </h2>
-				<%= render partial: 'display_rating', locals: {recipe: @recipe} %>
-
-				<p><small><b>Cook time: </b><%= @recipe.cook_time %></small></p>
-
-				<h3>Instructions</h3>
-				<div class="instructions">
-					<p><%= @recipe.instructions %></p>
-				</div>				
-			</div>
-		</div>
-	</div>
 
 	<div class="row">
-		<div class="col-md-12">
-			<% @recipe.recipe_ingredients.each do |i| %>
-				<table class="table table-striped">
-					<thead>
-						<tr>
-							<th>Quantity</th>
-							<th>Ingredient</th>
+		<%= render partial: 'image_and_user', locals: {recipe: @recipe} %>
 
-							<% if @recipe.user == current_user %>
-								<th>Edit Ingredient</th>
-							<% end %>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td><%= i.quantity %></td>
-							<td><%= i.ingredient.name %></td>
-						<% if @recipe.user == current_user %>
-							<td>
-								<span class="edit-ingredient"><%= link_to "Edit", edit_recipe_ingredient_path(i) %></span>	 
-								<span class="edit-ingredient"><%= link_to "Delete", recipe_ingredient_path(i), data: {:confirm => 'Are you sure?'}, :method => :delete %></span>			
-							</td>					
-						<% end %>	
-						</tr>
-					</tbody>
-					
-				</table>		
-			<% end %>
-		</div>			
+		<%= render partial: 'title_and_rating', locals: {recipe: @recipe} %>		
 	</div>
+
+	<%= render partial: 'recipe_ingredients/recipe_ingredients', locals: {recipe: @recipe} %>
 
 
 	<div class="row">
