@@ -1,7 +1,6 @@
 class WelcomeController < ApplicationController
-	skip_before_action :verify_user, only: :home
+	skip_before_action :verify_user
 	
 	def home
-		render layout: 'home_page'
 	end
 end
