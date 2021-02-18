@@ -31,11 +31,12 @@ class Recipe < ApplicationRecord
 	end
 
 	def avg_rating
-		stars = []
-		self.reviews.each do |review|
-			stars << review.stars
-		end
-		avg_stars = (stars.sum(0.0) / stars.size).to_i
+		# stars = []
+		# self.reviews.each do |review|
+		# 	stars << review.stars
+		# end
+		# avg_stars = (stars.sum(0.0) / stars.size).to_i
+		Recipe.joins(:reviews).where("reviews.recipe_id =?", self.id).average(:stars).to_i
 	end
 
 	def empty_stars
