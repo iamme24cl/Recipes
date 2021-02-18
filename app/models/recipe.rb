@@ -25,6 +25,11 @@ class Recipe < ApplicationRecord
 		joins(:recipe_ingredients).where("recipe_ingredients.ingredient_id =?", ingredient_id)
 	end
 
+	def self.by_recipe_title(title)
+		where("title LIKE ?", "%#{title}%")
+		# "name LIKE ? OR postal_code LIKE ?", "%#{search}%", "%#{search}%"
+	end
+
 	def avg_rating
 		stars = []
 		self.reviews.each do |review|

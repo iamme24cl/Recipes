@@ -7,6 +7,9 @@ class RecipesController < ApplicationController
 		elsif 
 			!params[:ingredient].blank?
 			@recipes = Recipe.by_ingredient(params[:ingredient])
+		elsif
+			!params[:title].blank?
+			@recipes = Recipe.by_recipe_title(params[:title])
 		else
 			@recipes = Recipe.all
 		end
