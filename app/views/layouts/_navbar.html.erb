@@ -9,8 +9,8 @@
       </button>
 
       <%= link_to "Recipes", recipes_path, class: "navbar-brand" %>
-
     </div>
+
     <div class="collapse navbar-collapse" id="myNavbar">
       <% if current_user %>
         <ul class="nav navbar-nav">
@@ -19,10 +19,11 @@
           <li><%= link_to "All Reviews", reviews_path %></li>         
           <li><%= link_to "Add a Review", new_review_path %></li>
         </ul>
+
         <ul class="nav navbar-nav navbar-right">
           <li><%= link_to "My Profile", user_path(current_user) %></li>
           <li><%= link_to "Logout", logout_path, method: :delete %></li>
-        </ul>
+        </ul>        
       <% else %>
         <ul class="nav navbar-nav navbar-right">
           <li><a href="/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
