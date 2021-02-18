@@ -10,12 +10,12 @@ class RecipesController < ApplicationController
 		else
 			@recipes = Recipe.all
 		end
-		render layout: 'recipes_index'
+		# render layout: 'recipes_index'
 	end
 
 	def top_rated
 		@recipes = Recipe.top_rated	
-		render :index, layout: 'recipes_index'	
+		render :index, layout: 'recipes'	
 	end
 
 	def show
