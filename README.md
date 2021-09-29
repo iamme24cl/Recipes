@@ -1,7 +1,7 @@
 # Recipes
 > This application manages recipes and ingredients for an account. User is also able to review and rate other recipes.
 
-> Live demo [_here_](https://youtu.be/i3Q8Ns4z11o). 
+
 
 ## Table of Contents
 * [General Info](#general-information)

@@ -1,35 +1,42 @@
-
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
+    <%= link_to "Recipes", recipes_path, class: "navbar-brand me-5", id: "logo" %>
+    
 
-      <%= link_to "Recipes", recipes_path, class: "navbar-brand" %>
-    </div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <% if current_user %>
-        <ul class="nav navbar-nav">
-          <li><%= link_to "Top Rated Recipes", recipes_top_rated_path %></li>
-          <li><%= link_to "Add a Recipe", new_recipe_path %></li>
-          <li><%= link_to "All Reviews", reviews_path %></li>         
-          <li><%= link_to "Add a Review", new_review_path %></li>
-        </ul>
-
-        <ul class="nav navbar-nav navbar-right">
-          <li><%= link_to "My Profile", user_path(current_user) %></li>
-          <li><%= link_to "Logout", logout_path, method: :delete %></li>
-        </ul>        
-      <% else %>
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-          <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-        </ul>
-      <% end %>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <% if current_user %>
+          <li class="nav-item">
+            <%= link_to "Top Rated Recipes", recipes_top_rated_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Add a Recipe", new_recipe_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "All Reviews", reviews_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Add a Review", new_review_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "My Profile", user_path(current_user), class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Logout", logout_path, method: :delete, class: "nav-link" %>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <a class="nav-link" href="/signup">Sign Up</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/login">Login</a>
+          </li>
+        <% end %>
+      </ul>
     </div>
   </div>
 </nav>
