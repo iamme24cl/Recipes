@@ -16,6 +16,11 @@
     color: green;
   }
 
+  .home-page-img {
+    border-radius: 10px;
+    max-height: 500px;
+  }
+
   .edit-ingredient, {
     margin-right: 10px;
   }
@@ -37,15 +42,6 @@
   &:hover {
     transform: scale(1.075);
     }  
-  }
-
-  img.home-page {
-    width: 700px;
-    // border-radius: 10px;
-  }
-  
-  .home-page {
-    margin: auto;    
   }
 
   .image-title {
