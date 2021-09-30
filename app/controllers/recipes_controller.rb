@@ -17,7 +17,7 @@ class RecipesController < ApplicationController
 
 	def top_rated
 		@recipes = Recipe.top_rated	
-		render :index, layout: 'recipes'	
+		render :index
 	end
 
 	def show
