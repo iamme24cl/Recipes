@@ -1,32 +1,44 @@
-<%= render partial: 'layouts/errors', locals: {object: @review} %>
+<div class="container mt-5 form">
+	<%= render partial: 'layouts/errors', locals: {object: @review} %>
 
-<%= form_for @review do |f| %>
-	<div class="form-group">
-		<%= f.label :title %>
-		<%= f.text_field :title, class: "form-control" %>
+	<%= form_for @review do |f| %>
+		<div class="row">
+			<div class="col">
+				<div class="form-group mb-3">
+					<%= f.label :title %>
+					<%= f.text_field :title, class: "form-control" %>
+				</div>
+
+				<div class="form-group mb-3">
+					<%= f.label :content %>
+					<%= f.text_area :content, class: "form-control" %>		
+				</div>
+
+				<div class="form-group mb-3">
+					<%= f.label :stars, "Rate on a Scale of 1-5" %><br>
+					<%= f.number_field :stars, min: 0, max: 5 %>
+				</div>
+
+				<div class="form-group mb-3">
+					<% if @recipe %>
+						<%= f.hidden_field :recipe_id %>
+					<% else %>
+						<%= f.label :recipe_id, "Select a Recipe" %><br>
+						<%= f.collection_select :recipe_id, Recipe.all.order("title DESC"), :id, :title, {:prompt => "Select"} %>
+					<% end %>
+				</div>
+			
+
+				<%= f.submit class: "btn btn-dark" %>
+			</div>
+		</div>
+	<% end %>
+
+	<div class="row">
+		<div class="col">
+			<%= link_to "Back", recipes_path, class: "btn btn-dark" %>
+		</div>
 	</div>
 
-	<div class="form-group">
-		<%= f.label :content %>
-		<%= f.text_area :content, class: "form-control" %>		
-	</div>
 
-	<div class="form-group">
-		<%= f.label :stars, "Rate on a Scale of 1-5" %><br>
-		<%= f.number_field :stars, min: 0, max: 5 %>
-	</div>
-
-	<div class="form-group">
-		<% if @recipe %>
-			<%= f.hidden_field :recipe_id %>
-		<% else %>
-			<%= f.label :recipe_id, "Select a Recipe" %><br>
-			<%= f.collection_select :recipe_id, Recipe.all.order("title DESC"), :id, :title, {:prompt => "Select"} %>
-		<% end %>
-	</div>
-	
-
-	<%= f.submit class: "btn btn-primary" %>
-<% end %>
-
-<%= go_back(@recipe) %>
+</div>
