@@ -1,30 +1,37 @@
 <div class="container">
-	
-<%= render 'filter_form' %>
+	<div class="row">
+		<div class="col">
+			<h5>Filter Recipes by one of the following:</h5>
+		</div>
 
-<div class="row">
-	<% @recipes.each do |recipe| %>
+		<%= render 'filter_form' %>
+	</div>
 
-		<div class="col-md-4">
-			<% if recipe.image.attached? %>
-				<a href="<%= recipe_path(recipe) %>"><%= image_tag url_for(recipe.image), class: "img-responsive img-rounded recipe-image" %></a>		
-			<% end %>
+	<div class="row mt-3">
+		<% @recipes.each do |recipe| %>
 
-			<div class="image-title">
-				<h3><%=link_to recipe.title, recipe_path(recipe.id) %></h3>
+			<div class="col-md-4 mt-3 text-center">
+				<h3 ><%=link_to recipe.title, recipe_path(recipe.id) %></h3>
 
-				<%= render partial: 'display_rating', locals: {recipe: recipe} %>
-							
-				<small class="recipe-title-content">
-					<b>Submitted by:</b> <%= recipe.user.name %> <%= submitted_on recipe %>
-				</small>	
-				<p>
-					<small class="recipe-title-content"><b>Ready in</b> - <%= recipe.cook_time %></small>				
-				</p>
+				<% if recipe.image.attached? %>
+					<a href="<%= recipe_path(recipe) %>"><%= image_tag url_for(recipe.image), class: "img-fluid" %></a>		
+				<% end %>
+
+				<div class="row mt-2">
+					<div class="col">
+						<%= render partial: 'display_rating', locals: {recipe: recipe} %>
+								
+						<small class="recipe-title-content">
+							<b>Submitted by:</b> <%= recipe.user.name %> <%= submitted_on recipe %>
+						</small>	
+						<p>
+							<small class="recipe-title-content"><b>Ready in</b> - <%= recipe.cook_time %></small>				
+						</p>
+					</div>
+				</div>
 			</div>	
-					
-		</div>	
-		
-	<% end %>
-</div>
+		<% end %>
+	</div>
+
+	
 </div>

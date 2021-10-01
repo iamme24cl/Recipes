@@ -10,9 +10,9 @@ module ReviewsHelper
 
 	def go_back(recipe)
 		if recipe
-			link_to "Back", recipe_path(recipe), class: "btn btn-primary"
+			link_to "Back", recipe_path(recipe), class: "btn btn-dark"
 		else
-			link_to "Back", recipes_path, class: "btn btn-primary"
+			link_to "Back", recipes_path, class: "btn btn-dark"
 		end
 	end
 end

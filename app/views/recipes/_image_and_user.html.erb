@@ -1,9 +1,12 @@
 <div class="col-md-4">
+  <h2><%= recipe.title %> </h2>
+  <%= render partial: 'display_rating', locals: {recipe: recipe} %>
+  
   <% if recipe.image.attached? %>    
-   <%= image_tag url_for(recipe.image), class: "img-responsive img-rounded" %>
+   <%= image_tag url_for(recipe.image), class: "img-fluid" %>
   <% end %>
   
-  <small class="recipe-title-content">
+  <small class="recipe-title-content mt-1">
     <b>Submitted by:</b> <%= recipe.user.name %> <%= submitted_on recipe %>  
   </small>				
 </div>

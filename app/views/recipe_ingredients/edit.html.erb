@@ -1,3 +1,15 @@
-<h1>Edit Ingredients</h1>
+<div class="container form mt-5">
+  <%= render partial: 'layouts/errors', locals: {object: @recipe_ingredient} %>
+  
+  <div class="row">
+    <div class="col">
+      <h1>Edit Ingredients</h1>
+    </div>
+  </div>
 
-<%= render 'form' %>
+  <div class="row">
+    <div class="col">
+      <%= render 'form' %>
+    </div>
+  </div>
+</div>
