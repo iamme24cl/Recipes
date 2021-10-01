@@ -14,7 +14,7 @@
 				<h3 ><%=link_to recipe.title, recipe_path(recipe.id) %></h3>
 
 				<% if recipe.image.attached? %>
-					<a href="<%= recipe_path(recipe) %>"><%= image_tag url_for(recipe.image), class: "img-fluid" %></a>		
+					<a href="<%= recipe_path(recipe) %>"><%= image_tag url_for(recipe.image), class: "img-fluid recipe-image" %></a>		
 				<% end %>
 
 				<div class="row mt-2">
