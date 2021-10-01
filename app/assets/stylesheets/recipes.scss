@@ -34,9 +34,12 @@
     margin: 15px 15px 0 0;
   }
 
+  .recipe-show-image {
+    height: 300px;
+  }
+
   img.recipe-image {
-    height: 200px;
-    border-radius: 5px;
+    
   -webkit-transition: all .3s ease-out;
   -moz-transition: all .3s ease-out;
   -o-transition: all .3s ease-out;

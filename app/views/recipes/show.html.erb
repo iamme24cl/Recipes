@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container mb-5">
 
 	<div class="row">
 		<%= render partial: 'image_and_user', locals: {recipe: @recipe} %>
@@ -13,19 +13,6 @@
 		<%= render partial: 'recipe_ingredients/recipe_ingredients', locals: {recipe: @recipe} %>
 	</div>
 
-
-
-	<div class="row">
-		<div class="col">
-			
-			<%= link_to "Add a Review", new_recipe_review_path(@recipe), class: "btn btn-dark" %>
-			
-			<%= link_to "See all Reviews", recipe_reviews_path(@recipe), class: "btn btn-dark" %>
-		</div>		
-	</div>
-	
-	
-	
 </div>
 
 

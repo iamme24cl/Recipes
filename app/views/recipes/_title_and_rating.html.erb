@@ -1,5 +1,5 @@
-<div class="col-md-8 mt-5">
-  <div>
+<div class="col-md-8">
+  <div class="mt-5">
     <p><small><b>Cook time: </b><%= recipe.cook_time %></small></p>
 
     <h3>Instructions</h3>
@@ -7,5 +7,12 @@
       <p><%= recipe.instructions %></p>
     </div>				
   </div>
+
   
+  <div>
+    
+    <%= link_to "Add a Review", new_recipe_review_path(@recipe), class: "btn btn-dark" %>
+    
+    <%= link_to "See all Reviews", recipe_reviews_path(@recipe), class: "btn btn-dark" %>
+  </div>		
 </div>
