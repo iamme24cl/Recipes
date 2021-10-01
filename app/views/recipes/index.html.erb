@@ -10,28 +10,28 @@
 	<div class="row mt-3">
 		<% @recipes.each do |recipe| %>
 
-			<div class="col-md-3 col-lg-2 mt-3 text-center">
-				<h5><%=link_to recipe.title, recipe_path(recipe.id) %></h5>
+			<div class="col-md-3 mt-3 text-center">
+				<div class="card" style="width: 18rem;">
+					<% if recipe.image.attached? %>
+						<a href="<%= recipe_path(recipe) %>"><%= image_tag url_for(recipe.image), class: "card-img-top", alt: "recipe image" %></a>		
+					<% end %>
+					<div class="card-body">
+						<h5 class="card-title"><%=link_to recipe.title, recipe_path(recipe.id) %></h5>
+						<p class="card-text">
+							<b><%= render partial: 'display_rating', locals: {recipe: recipe} %></b>
 
-				<% if recipe.image.attached? %>
-					<a href="<%= recipe_path(recipe) %>"><%= image_tag url_for(recipe.image), class: "img-thumbnail recipe-image" %></a>		
-				<% end %>
+							<small class="recipe-title-content">
+								<b>By:</b> <%= recipe.user.name %> <%= submitted_on recipe %>
+							</small>	
 
-				<div class="row mt-2">
-					<div class="col">
-						<%= render partial: 'display_rating', locals: {recipe: recipe} %>
-								
-						<small class="recipe-title-content">
-							<b>By:</b> <%= recipe.user.name %> <%= submitted_on recipe %>
-						</small>	
-						<p>
-							<small class="recipe-title-content"><b>Ready in</b> - <%= recipe.cook_time %></small>				
+							<p>
+								<small class="recipe-title-content"><b>Ready in</b> - <%= recipe.cook_time %></small>				
+							</p>
 						</p>
+						<a href="<%= recipe_path(recipe) %>" class="btn btn-dark">Go to Recipe</a>
 					</div>
 				</div>
 			</div>	
 		<% end %>
 	</div>
-
-	
 </div>

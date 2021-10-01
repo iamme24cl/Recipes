@@ -6,7 +6,7 @@ class Recipe < ApplicationRecord
 	has_many :ingredients, through: :recipe_ingredients
 	has_one_attached :image
 
-	validates :title, presence: true
+	validates :title, presence: true, length: { maximum: 20 }
 	validates :cook_time, presence: true
 	validates :instructions, presence: true
 	validate :is_title_case
