@@ -21,8 +21,12 @@
     max-height: 500px;
   }
 
-  .edit-ingredient, {
+  .edit-ingredient {
     margin-right: 10px;
+  }
+
+  .recipe-btn:hover {
+    background-color: darkgray;
   }
 
   .edit-review {
