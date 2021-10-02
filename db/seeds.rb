@@ -6,9 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-cool = User.create(name: "Cool Lama", email: "c@mail.com", password: "password")
-max = User.create(name: "Max Good", email: "m@mail.com", password: "password")
-will = User.create(name: "Will Simpson", email: "w@mail.com", password: "password")
+cool = User.create(name: "Cool Lama", email: "c@mail.com", password: "coolcool1!")
+max = User.create(name: "Max Good", email: "m@mail.com", password: "max1max1!")
+will = User.create(name: "Will Simpson", email: "w@mail.com", password: "will1will1!")
 
 
 ingredients = ['chicken', 'salmon', 'steak', 'onions', 'salt', 'pepper', 'tomatoes', 'oil', 'water', 'rice', 'pasta']
