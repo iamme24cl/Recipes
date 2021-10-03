@@ -36,8 +36,7 @@ module Recipes
     # config.eager_load_paths << Rails.root.join("extras")
 
     # Use this to serve assests as Rails will not serve them by default
-    # I used the gem 'rails_12factor' instead to achieve the same result
-    # config.serve_static_assets = true
+    config.serve_static_assets = true
 
     # Don't generate system test files.
     config.generators.system_tests = nil
