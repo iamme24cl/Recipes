@@ -1,7 +1,6 @@
 <div class="col-md-4">
   <h2><%= recipe.title %> </h2>
-  <%= render partial: 'display_rating', locals: {recipe: recipe} %>
-  
+    
   <% if recipe.image.attached? %>    
    <%= image_tag url_for(recipe.image), class: "img-thumbnail recipe-show-image" %>
   <% end %>

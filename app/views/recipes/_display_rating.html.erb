@@ -2,15 +2,9 @@
   <% if recipe.reviews.exists? %>	
 
     <% recipe.avg_rating.times do %>
-      <span class="glyphicon glyphicon-star"></span>
+      <i class="fas fa-star fa-xs stars"></i>
     <% end %>
-
-    <% recipe.empty_stars.times do %>
-      <span class="glyphicon glyphicon-star-empty"></span>
-    <% end %>
-
-    <span class="reviews-count"><%= pluralize(recipe.reviews.count, "review") %></span>
-
+   
   <% else %>
 
     <span class="reviews-count"><%= pluralize(recipe.reviews.count, "review") %></span>

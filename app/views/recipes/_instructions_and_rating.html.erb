@@ -1,5 +1,6 @@
 <div class="col-md-8">
   <div class="mt-5">
+    <%= render partial: 'display_rating', locals: {recipe: recipe} %>
     <p><small><b>Cook time: </b><%= recipe.cook_time %></small></p>
 
     <h3>Instructions</h3>

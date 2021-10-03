@@ -11,7 +11,7 @@
 		<% @recipes.each do |recipe| %>
 
 			<div class="col-md-6 col-lg-4 col-xl-3 mt-3 text-center">
-				<div class="card" style="width: 18rem;">
+				<div class="card recipe-card" style="width: 18rem;">
 					<% if recipe.image.attached? %>
 						<a href="<%= recipe_path(recipe) %>"><%= image_tag url_for(recipe.image), class: "card-img-top", alt: "recipe image", height: "250px" %></a>		
 					<% end %>

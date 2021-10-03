@@ -6,22 +6,22 @@
 		</div>
 	</div>
 
-<div class="row">
-	<div class="col-md-12">
-			<% @reviews.each do |review| %>
-				<h3 class="review-title">
+<% @reviews.each do |review| %>
+	<div class="row mb-3">
+			<div class="col">
+				<h5 class="review-title">
 					<%= review.title %>
 
 					<% review.stars.times do %>
-						<small><span class="glyphicon glyphicon-star"></span></small>						
+						<small><i class="fas fa-star fa-xs stars"></i></small>						
 					<% end %>
-				</h3>
+				</h5>
 
-				<div>
+				<p class="ms-2">
 					<small class="review-user-and-title">
 						<%= review.recipe.title %> by - <%= review.user.name %>
 					</small>
-				</div>	
+				</p>	
 
 				<div class="review-content">
 					<p><%= review.content %></p>
@@ -31,9 +31,9 @@
 						<%= link_to "Edit Review", edit_review_path(review), class: "edit-review" %>
 					<% end %>
 				</div>						
-			<% end %>
-		</div>
-</div>
+			</div>
+	</div>
+<% end %>
 
 	<div class="row">
 		<div class="col">
