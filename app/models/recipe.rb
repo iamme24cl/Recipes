@@ -15,27 +15,16 @@ class Recipe < ApplicationRecord
 	scope :top_rated, -> { left_joins(:reviews).group(:id).order('avg(stars) desc').limit(8) }
 	scope :by_user, ->(user_id) { where(user: user_id) }
 
-	# def self.by_user(user_id)
-  #   where(user: user_id)
-  # end
 
 	def self.by_ingredient(ingredient_id)
-		# ingredient = Ingredient.find_by(id: ingredient_id) 
-		# ingredient.recipes	
 		joins(:recipe_ingredients).where("recipe_ingredients.ingredient_id =?", ingredient_id)
 	end
 
 	def self.by_recipe_title(title)
-		where("title LIKE ?", "%#{title}%")
-		# "name LIKE ? OR postal_code LIKE ?", "%#{search}%", "%#{search}%"
+		where("title ILIKE ?", "%#{title}%")
 	end
 
 	def avg_rating
-		# stars = []
-		# self.reviews.each do |review|
-		# 	stars << review.stars
-		# end
-		# avg_stars = (stars.sum(0.0) / stars.size).to_i
 		Recipe.joins(:reviews).where("reviews.recipe_id =?", self.id).average(:stars).to_i
 	end
 
