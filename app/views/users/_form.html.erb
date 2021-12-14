@@ -1,40 +1,46 @@
 <div class="container mt-5 form">
     <div class="row">
         <div class="col text-center fs-3 mb-3">
-            <h3>Sign Up</h3>
+            <% if @user.id %>
+                <h3>Edit Profile</h3>
+            <% else %>
+                <h3>Sign Up</h3>
+            <% end %>
         </div>
     </div>
 
     <div class="row ">
         <div class="col">
-            <%= form_tag('/users', method: :post) do %>
+            <%= form_for @user do |f| %>
                 <div class="form-group mb-3">
-                    <%= label_tag(:name, "Name") %>
-                    <%= text_field_tag(:name, nil, class: "form-control") %>
+                    <%= f.label :name %>
+                    <%= f.text_field :name, class: "form-control" %>
                 </div>
 
                 <div class="form-group mb-3">
-                    <%= label_tag(:email, "Email") %>
-                    <%= text_field_tag(:email, nil, class: "form-control") %>
+                    <%= f.label :email %>
+                    <%= f.text_field :email, class: "form-control" %>
                 </div>
 
                 <div class="form-group mb-3">
-                    <%= label_tag(:password, "Password") %>
-                    <%= password_field_tag(:password, nil, class: "form-control") %>
+                    <%= f.label :password %>
+                    <%= f.password_field :password, class: "form-control" %>
                 </div>
 
-                <%= submit_tag("Sign Up", class: "btn btn-dark") %>	
+                <%= f.submit class: "btn btn-dark" %>	
             <% end %>
         </div>
     </div>
 
-    <div class="row mt-5">
-        <div class="col">
-            <h5>Sign up with the one of the following</h5>
+   
+    <% if !@user.id %>
+        <div class="row mt-5">
+            <div class="col">
+                <h5>Sign up with the one of the following</h5>
+                
             
-           
-            <%= render partial: 'sessions/omniauth_buttons' %>
+                <%= render partial: 'sessions/omniauth_buttons' %>
+            </div>
         </div>
-    </div>
-
+    <% end %>
 </div>
