@@ -1,18 +1,12 @@
 # Recipes
 > This application manages recipes and ingredients for an account. User is also able to review and rate other recipes.
 
-
-
 ## Table of Contents
 * [General Info](#general-information)
 * [Technologies Used](#technologies-used)
 * [Usage](#usage)
 * [Project Status](#project-status)
 * [Contact](#contact)
-
-## General Information
-- Create, update and delete transactions.
-- I built this application to practice DOM manipulation with my JavaScript skills, and fethcing data from a backend API.
 
 ## Technologies Used
 Ruby on Rails
@@ -26,7 +20,7 @@ Ruby on Rails
     - visit port `localhost:3000` on your choice of browser to use the application
 
 ## Project Status
-Project is: _in progress_ . I intend to add more features to this application as I learn new skills.
+Project is: _in progress_ . I intend to add more features to this application.
 
 ## Contact
 Created by [@iamme24cl](https://github.com/iamme24cl) - feel free to contact me!
